@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barangay Appointment System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand">BAS</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About us</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="account-links">
+            <a href="#login">Log In</a>
+            <a href="#register">Register</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="dots dots-top">••••<br>••••<br>••••</div>
+            <div class="circle circle-one"></div>
+            <div class="circle circle-two"></div>
+            <div class="hero-text">
+                <h1>BARANGAY<br><span>APPOINTMENT SYSTEM</span></h1>
+                <p>Book your barangay appointment online for a more convenient and organized service.</p>
+            </div>
+            <div class="dots dots-bottom">•••••<br>•••••<br>•••••</div>
+        </section>
+
+        <section id="about" class="section about-section">
+            <div class="about-top">
+                <div class="about-copy">
+                    <h2>ABOUT US</h2>
+                    <p>The Barangay Appointment System is an online platform designed to make barangay services easier and more convenient for residents. It allows users to view available services and schedule appointments online.</p>
+                    <p>Our goal is to provide a simple, organized, and accessible way for residents to connect with their barangay and save time when requesting services.</p>
+                </div>
+                <img src="images/barangay-hall.png" alt="Barangay hall">
+            </div>
+            <div class="line"></div>
+            <div class="mission-row">
+                <article class="green-card mission-card">
+                    <div class="card-symbol">◎</div>
+                    <div><h3>Our Mission</h3><p>To provide convenient, accessible, and organized barangay services through an online appointment system. We aim to make transactions easier for residents and improve the delivery of barangay services.</p></div>
+                </article>
+                <article class="green-card mission-card">
+                    <div class="card-symbol">♟</div>
+                    <div><h3>Our Goal</h3><p>To help residents save time and effort by allowing them to schedule appointments online. We also aim to reduce long waiting times and make barangay services more accessible to the community.</p></div>
+                </article>
+            </div>
+        </section>
+
+        <section id="services" class="section services-section">
+            <div class="section-title">
+                <h2>OUR SERVICES</h2>
+                <p>We provide various barangay services to help our residents with their needs.<br>You can easily book an appointment online.</p>
+                <div class="short-line"></div>
+            </div>
+            <div class="service-grid service-grid-top">
+                <article class="green-card service-card"><h3>Barangay Certificate</h3><p>Apply for certificates needed for various transactions.</p><a href="#request-form" class="request-btn" data-service="Barangay Certificate">Request now <b>➜</b></a></article>
+                <article class="green-card service-card"><h3>Certificate of Indigency</h3><p>Request a certificate for qualified residents who need proof of financial status.</p><a href="#request-form" class="request-btn" data-service="Certificate of Indigency">Request now <b>➜</b></a></article>
+            </div>
+            <div class="service-grid service-grid-bottom">
+                <article class="green-card service-card"><h3>Barangay Clearance</h3><p>Request a barangay clearance for personal or official purposes.</p><a href="#request-form" class="request-btn" data-service="Barangay Clearance">Request now <b>➜</b></a></article>
+                <article class="green-card service-card"><h3>Certificate of Residency</h3><p>Request a certificate to verify that you are a resident of the barangay.</p><a href="#request-form" class="request-btn" data-service="Certificate of Residency">Request now <b>➜</b></a></article>
+                <article class="green-card service-card"><h3>Blotter Report</h3><p>Request assistance in reporting an incident or ask for a copy of a blotter record.</p><a href="#request-form" class="request-btn" data-service="Blotter Report">Request now <b>➜</b></a></article>
+                <article class="green-card service-card"><h3>Other Services</h3><p>View and request other barangay services.</p><a href="#request-form" class="request-btn" data-service="Other Services">Request now <b>➜</b></a></article>
+            </div>
+        </section>
+
+        <section id="request-form" class="request-section">
+            <div class="request-heading">
+                <p class="request-eyebrow">BARANGAY SERVICES</p>
+                <h2>Request an Appointment</h2>
+                <p>Tell us what document you need and when you plan to pick it up.</p>
+            </div>
+            <form class="request-form" id="appointment-form">
+                <div class="request-fields">
+                    <div class="request-field">
+                        <label for="request-service">Service requested</label>
+                        <select id="request-service" name="service" required>
+                            <option value="" disabled selected>Select a service</option>
+                            <option>Barangay Certificate</option>
+                            <option>Certificate of Indigency</option>
+                            <option>Barangay Clearance</option>
+                            <option>Certificate of Residency</option>
+                            <option>Blotter Report</option>
+                            <option>Other Services</option>
+                        </select>
+                    </div>
+                    <div class="request-field">
+                        <label for="requester-name">Your full name</label>
+                        <input id="requester-name" name="requester-name" type="text" autocomplete="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="request-field">
+                        <label for="requester-contact">Contact number</label>
+                        <input id="requester-contact" name="requester-contact" type="tel" autocomplete="tel" placeholder="09XX XXX XXXX" required>
+                    </div>
+                    <div class="request-field">
+                        <label for="pickup-date">Preferred pickup date</label>
+                        <input id="pickup-date" name="pickup-date" type="date" required>
+                    </div>
+                    <div class="request-field">
+                        <label for="pickup-time">Preferred pickup time</label>
+                        <select id="pickup-time" name="pickup-time" required>
+                            <option value="" disabled selected>Select a time</option>
+                            <option>8:00 AM - 9:00 AM</option>
+                            <option>9:00 AM - 10:00 AM</option>
+                            <option>10:00 AM - 11:00 AM</option>
+                            <option>11:00 AM - 12:00 PM</option>
+                            <option>1:00 PM - 2:00 PM</option>
+                            <option>2:00 PM - 3:00 PM</option>
+                            <option>3:00 PM - 4:00 PM</option>
+                            <option>4:00 PM - 5:00 PM</option>
+                        </select>
+                    </div>
+                    <fieldset class="pickup-choice">
+                        <legend>Who will pick up the document?</legend>
+                        <label><input type="radio" name="pickup-person" value="self" checked> I will pick it up</label>
+                        <label><input type="radio" name="pickup-person" value="representative"> My representative will pick it up</label>
+                    </fieldset>
+                    <div class="request-field representative-fields" id="representative-fields" hidden>
+                        <label for="representative-name">Representative's full name</label>
+                        <input id="representative-name" name="representative-name" type="text" placeholder="Enter representative's full name">
+                    </div>
+                    <div class="request-field representative-fields" id="authorization-fields" hidden>
+                        <label for="authorization-letter">Authorization letter</label>
+                        <input id="authorization-letter" name="authorization-letter" type="file" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png">
+                        <small>Upload a PDF, JPG, or PNG file.</small>
+                    </div>
+                    <div class="request-field request-notes-field">
+                        <label for="request-notes">Additional details <span>(optional)</span></label>
+                        <textarea id="request-notes" name="notes" rows="3" placeholder="Add any details about your request"></textarea>
+                    </div>
+                </div>
+                <button class="request-submit" type="submit">Submit Request</button>
+                <p class="request-message" id="request-message" role="status" aria-live="polite"></p>
+            </form>
+            <div class="request-status-panel">
+                <div class="request-status-heading">
+                    <h3>Request Status</h3>
+                    <p>Saved requests appear here.</p>
+                </div>
+                <div class="request-status-list" id="request-status-list" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="section-title">
+                <h2>CONTACT US</h2>
+                <p>Do you have questions or need assistance? We are here to help! Contact your barangay office for inquiries about<br> appointments, documents, and available services.</p>
+            </div>
+            <div class="line"></div>
+            <div class="contact-grid">
+                <article class="green-card contact-card"><div class="contact-heading"><span>♧</span><h3>Address</h3></div><p>Barangay San Isidro Hall,<br>Pasig City, Philippines</p></article>
+                <article class="green-card contact-card"><div class="contact-heading"><span>♧</span><h3>Phone Number</h3></div><p>(02) 8123-4567</p></article>
+                <article class="green-card contact-card"><div class="contact-heading"><span>✉</span><h3>Email Address</h3></div><p>barangaysan isidro@example.com</p></article>
+                <article class="green-card contact-card"><div class="contact-heading"><span>◷</span><h3>Office Hours</h3></div><p>Monday – Friday<br>8:00 AM – 5:00 PM</p></article>
+                <article class="green-card contact-card"><h3>Visit Our Barangay Hall</h3><p>For additional assistance, you may visit the barangay hall during office hours.</p></article>
+            </div>
+            <h3 class="tagline">A Stronger Barangay, A Brighter Community!</h3>
+        </section>
+
+        <section id="login" class="account-section">
+            <img src="images/barangay-hall.png" alt="Barangay hall building" class="login-photo">
+            <div class="login-form-wrap">
+                <h2>Barangay Appointment System</h2>
+                <p class="welcome-back">Welcome Back!</p>
+                <p class="login-intro">Log in to schedule your barangay appointments easily.</p>
+                <div class="line"></div>
+                <h3>LOGIN</h3>
+                <form>
+                    <label for="login-email">Email Address</label>
+                    <input id="login-email" type="email" placeholder="Enter your email address">
+                    <label for="login-password">Password</label>
+                    <input id="login-password" type="password" placeholder="Password">
+                    <div class="login-options"><label><input type="checkbox"> Remember me</label><a href="#login">Forgot Password?</a></div>
+                    <button type="button">LOG IN</button>
+                </form>
+                <p class="switch-form">New to Barangay Appointment System? <a href="#register">Register now</a></p>
+            </div>
+        </section>
+
+        <section id="register" class="register-section">
+            <h2>BARANGAY APPOINTMENT SYSTEM</h2>
+            <p class="create-account">Create Your Account</p>
+            <form class="register-form">
+                <h3>Register</h3>
+                <div class="register-grid">
+                    <div><label for="fullname">Full Name</label><input id="fullname" type="text" placeholder="Enter your full name"><label for="email">Email Address</label><input id="email" type="email" placeholder="Enter your email address"><label for="phone">Phone Number</label><input id="phone" type="tel" placeholder="Enter your phone number"></div>
+                    <div><label for="address">Address</label><input id="address" type="text" placeholder="Enter your barangay address"><label for="password">Password</label><input id="password" type="password" placeholder="Enter your password"><label for="confirm-password">Confirm password</label><input id="confirm-password" type="password" placeholder="Re-enter password"></div>
+                </div>
+                <button type="button">CREATE ACCOUNT</button>
+                <p>Already have an account? <a href="#login">Log In</a></p>
+            </form>
+        </section>
+    </main>
+    <footer><p>Barangay Appointment System &copy; 2026</p></footer>
+    <script>
+        const serviceSelect = document.getElementById('request-service');
+        const pickupOptions = document.querySelectorAll('input[name="pickup-person"]');
+        const representativeFields = document.querySelectorAll('.representative-fields');
+        const representativeName = document.getElementById('representative-name');
+        const authorizationLetter = document.getElementById('authorization-letter');
+        const appointmentForm = document.getElementById('appointment-form');
+        const requestMessage = document.getElementById('request-message');
+        const requestStatusList = document.getElementById('request-status-list');
+        const requestStorageKey = 'barangayAppointmentRequests';
+        const requestStatuses = {
+            pending: 'Pending',
+            approved: 'Approved',
+            declined: 'Declined',
+            cancelled: 'Cancelled'
+        };
+        let requestItems = [];
+
+        try {
+            const savedRequests = JSON.parse(localStorage.getItem(requestStorageKey) || '[]');
+            if (Array.isArray(savedRequests)) requestItems = savedRequests;
+        } catch {
+            requestItems = [];
+        }
+
+        function saveRequestItems() {
+            try {
+                localStorage.setItem(requestStorageKey, JSON.stringify(requestItems));
+            } catch {
+                requestMessage.textContent = 'Request is shown for this session, but browser storage is unavailable.';
+            }
+        }
+
+        function renderRequestItems() {
+            requestStatusList.replaceChildren();
+
+            if (requestItems.length === 0) {
+                const emptyMessage = document.createElement('p');
+                emptyMessage.className = 'status-empty';
+                emptyMessage.textContent = 'No requests yet. Submit the form above to see a request here.';
+                requestStatusList.append(emptyMessage);
+                return;
+            }
+
+            requestItems.forEach((request) => {
+                const item = document.createElement('article');
+                item.className = 'status-item';
+
+                const details = document.createElement('div');
+                const service = document.createElement('h4');
+                service.textContent = request.service;
+                const pickup = document.createElement('p');
+                pickup.textContent = `Pickup: ${request.pickupDate} at ${request.pickupTime}`;
+                const pickupPerson = document.createElement('p');
+                pickupPerson.textContent = request.pickupPerson === 'representative'
+                    ? `Representative: ${request.representativeName}`
+                    : 'Picked up by requester';
+                details.append(service, pickup, pickupPerson);
+
+                const statusArea = document.createElement('div');
+                const badge = document.createElement('span');
+                badge.className = `status-badge status-${request.status}`;
+                badge.textContent = requestStatuses[request.status] || 'Pending';
+
+                const controlLabel = document.createElement('label');
+                controlLabel.className = 'status-control';
+                const controlText = document.createElement('span');
+                controlText.textContent = 'Demo status';
+                const statusSelect = document.createElement('select');
+                statusSelect.dataset.requestId = request.id;
+                statusSelect.setAttribute('aria-label', `Demo status for ${request.service}`);
+                Object.entries(requestStatuses).forEach(([value, label]) => {
+                    const option = document.createElement('option');
+                    option.value = value;
+                    option.textContent = label;
+                    statusSelect.append(option);
+                });
+                statusSelect.value = request.status;
+                controlLabel.append(controlText, statusSelect);
+                statusArea.append(badge, controlLabel);
+                item.append(details, statusArea);
+                requestStatusList.append(item);
+            });
+        }
+
+        requestStatusList.addEventListener('change', (event) => {
+            const statusSelect = event.target.closest('select[data-request-id]');
+            if (!statusSelect) return;
+
+            requestItems = requestItems.map((request) => request.id === statusSelect.dataset.requestId
+                ? { ...request, status: statusSelect.value }
+                : request);
+            saveRequestItems();
+            renderRequestItems();
+        });
+
+        document.querySelectorAll('.request-btn').forEach((button) => {
+            button.addEventListener('click', () => {
+                serviceSelect.value = button.dataset.service;
+            });
+        });
+
+        pickupOptions.forEach((option) => {
+            option.addEventListener('change', () => {
+                const needsRepresentative = option.value === 'representative' && option.checked;
+                representativeFields.forEach((field) => {
+                    field.hidden = !needsRepresentative;
+                });
+                representativeName.required = needsRepresentative;
+                authorizationLetter.required = needsRepresentative;
+            });
+        });
+
+        appointmentForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const pickupPerson = appointmentForm.querySelector('input[name="pickup-person"]:checked').value;
+            requestItems.unshift({
+                id: `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+                service: serviceSelect.value,
+                pickupDate: document.getElementById('pickup-date').value,
+                pickupTime: document.getElementById('pickup-time').value,
+                pickupPerson,
+                representativeName: representativeName.value.trim(),
+                status: 'pending'
+            });
+            saveRequestItems();
+            renderRequestItems();
+            appointmentForm.reset();
+            representativeFields.forEach((field) => {
+                field.hidden = true;
+            });
+            representativeName.required = false;
+            authorizationLetter.required = false;
+            requestMessage.textContent = 'Demo request added with Pending status. No request was sent to barangay staff.';
+        });
+
+        renderRequestItems();
+    </script>
+</body>
+</html>
