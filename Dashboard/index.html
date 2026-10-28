@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050705">
+  <title>Barangay Appointment System - Admin</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="canvas">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 10.1 12 3l9 7.1v9.4a1.5 1.5 0 0 1-1.5 1.5h-5.2v-6.3H9.7V21H4.5A1.5 1.5 0 0 1 3 19.5z"/></svg>
+        </span>
+        <span class="brand-name">Barangay Appointment System - Admin</span>
+      </div>
+      <div class="account">
+        <span class="account-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0z"/></svg>
+        </span>
+        <span>Admin</span>
+      </div>
+    </header>
+
+    <section class="design-panel" aria-labelledby="page-title">
+      <div class="intro">
+        <div class="intro-copy">
+          <p class="eyebrow">Admin panel</p>
+          <h1 id="page-title">Appointment Requests</h1>
+          <p class="subtitle">Manage and review appointment requests from residents</p>
+          <div class="filters" role="group" aria-label="Filter appointments by status">
+            <span class="filter-label">Filter:</span>
+            <button class="filter-button" type="button" data-filter="All" aria-pressed="true">All</button>
+            <button class="filter-button" type="button" data-filter="Pending" aria-pressed="false">Pending</button>
+            <button class="filter-button" type="button" data-filter="Approved" aria-pressed="false">Approved</button>
+            <button class="filter-button" type="button" data-filter="Declined" aria-pressed="false">Declined</button>
+            <button class="filter-button" type="button" data-filter="Cancelled" aria-pressed="false">Cancelled</button>
+          </div>
+        </div>
+        <img class="office-photo" src="assets/barangay-hall.png" alt="Barangay hall">
+      </div>
+
+      <div class="table-frame">
+        <table>
+          <colgroup>
+            <col class="id-column">
+            <col class="resident-column">
+            <col class="service-column">
+            <col class="pickup-column">
+            <col class="pickup-by-column">
+            <col class="status-column">
+            <col class="update-column">
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Resident</th>
+              <th scope="col">Services</th>
+              <th scope="col">Pickup</th>
+              <th scope="col">Who picks up</th>
+              <th scope="col">Status</th>
+              <th scope="col">Update</th>
+            </tr>
+          </thead>
+          <tbody id="requests">
+            <tr data-id="1" data-status="Approved">
+              <td class="id-cell">1</td>
+              <td>
+                <span class="resident-name">Andaman, Jennilyn C.</span>
+                <span class="resident-contact">jennilynandaman@gmail.com<br>098195284156</span>
+              </td>
+              <td>
+                <span class="service-name">Barangay Certificate</span>
+                <span class="resident-contact">To apply for a barangay certificate</span>
+              </td>
+              <td>
+                <span>2026-10-22</span><br>
+                <span class="pickup-time">9:00 am - 10:00 am</span>
+              </td>
+              <td>Residents</td>
+              <td><span class="status-badge">Approved</span></td>
+              <td>
+                <label>
+                  <span class="visually-hidden">Update request 1 status</span>
+                  <select class="update-select" aria-label="Update request 1 status">
+                    <option>Approved</option>
+                    <option>Pending</option>
+                    <option>Declined</option>
+                    <option>Cancelled</option>
+                  </select>
+                </label>
+              </td>
+            </tr>
+            <tr data-id="2" data-status="Pending">
+              <td class="id-cell">2</td>
+              <td>
+                <span class="resident-name">Reyes, Maria L.</span>
+                <span class="resident-contact">maria.reyes@example.com<br>09171234567</span>
+              </td>
+              <td>
+                <span class="service-name">Barangay Clearance</span>
+                <span class="resident-contact">For local employment</span>
+              </td>
+              <td>
+                <span>2026-10-28</span><br>
+                <span class="pickup-time">10:00 am - 11:00 am</span>
+              </td>
+              <td>Self</td>
+              <td><span class="status-badge pending">Pending</span></td>
+              <td>
+                <label>
+                  <span class="visually-hidden">Update request 2 status</span>
+                  <select class="update-select" aria-label="Update request 2 status">
+                    <option>Approved</option>
+                    <option selected>Pending</option>
+                    <option>Declined</option>
+                    <option>Cancelled</option>
+                  </select>
+                </label>
+              </td>
+            </tr>
+            <tr data-id="3" data-status="Approved">
+              <td class="id-cell">3</td>
+              <td>
+                <span class="resident-name">Santos, Miguel R.</span>
+                <span class="resident-contact">miguel.santos@example.com<br>09182345678</span>
+              </td>
+              <td>
+                <span class="service-name">Certificate of Indigency</span>
+                <span class="resident-contact">For educational assistance</span>
+              </td>
+              <td>
+                <span>2026-10-29</span><br>
+                <span class="pickup-time">9:00 am - 10:00 am</span>
+              </td>
+              <td>Self</td>
+              <td><span class="status-badge">Approved</span></td>
+              <td>
+                <label>
+                  <span class="visually-hidden">Update request 3 status</span>
+                  <select class="update-select" aria-label="Update request 3 status">
+                    <option selected>Approved</option>
+                    <option>Pending</option>
+                    <option>Declined</option>
+                    <option>Cancelled</option>
+                  </select>
+                </label>
+              </td>
+            </tr>
+            <tr data-id="4" data-status="Pending">
+              <td class="id-cell">4</td>
+              <td>
+                <span class="resident-name">Dela Cruz, Ana P.</span>
+                <span class="resident-contact">ana.delacruz@example.com<br>09193456789</span>
+              </td>
+              <td>
+                <span class="service-name">Barangay Certificate</span>
+                <span class="resident-contact">Proof of address</span>
+              </td>
+              <td>
+                <span>2026-10-30</span><br>
+                <span class="pickup-time">1:00 pm - 2:00 pm</span>
+              </td>
+              <td>Authorized representative</td>
+              <td><span class="status-badge pending">Pending</span></td>
+              <td>
+                <label>
+                  <span class="visually-hidden">Update request 4 status</span>
+                  <select class="update-select" aria-label="Update request 4 status">
+                    <option>Approved</option>
+                    <option selected>Pending</option>
+                    <option>Declined</option>
+                    <option>Cancelled</option>
+                  </select>
+                </label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="save-line">
+        <button class="save-button" type="button">SAVE</button>
+      </div>
+    </section>
+
+    <span class="dots dots-left" aria-hidden="true"></span>
+    <span class="dots dots-right" aria-hidden="true"></span>
+  </main>
+  <div class="notice" id="notice" role="status" aria-live="polite"></div>
+
+  <script>
+    const requestRows = [...document.querySelectorAll("#requests tr")];
+    const notice = document.querySelector("#notice");
+    const storageKey = "barangay-appointment-statuses";
+    const validStatuses = ["Approved", "Pending", "Declined", "Cancelled"];
+
+    function showNotice(message) {
+      notice.textContent = message;
+      notice.classList.add("visible");
+      window.setTimeout(() => notice.classList.remove("visible"), 2400);
+    }
+
+    try {
+      const savedStatuses = JSON.parse(localStorage.getItem(storageKey) || "{}");
+      const legacyStatus = localStorage.getItem("barangay-appointment-status");
+      requestRows.forEach((row) => {
+        const status = savedStatuses[row.dataset.id] ||
+          (row.dataset.id === "1" && validStatuses.includes(legacyStatus) ? legacyStatus : null);
+        if (!validStatuses.includes(status)) return;
+        row.dataset.status = status;
+        row.querySelector(".update-select").value = status;
+        const badge = row.querySelector(".status-badge");
+        badge.textContent = status;
+        badge.className = `status-badge ${status.toLowerCase()}`;
+      });
+    } catch (error) {
+      console.error("Could not load saved appointment statuses.", error);
+      showNotice("Could not load saved statuses.");
+    }
+
+    function applyFilter(filter) {
+      requestRows.forEach((row) => {
+        row.hidden = filter !== "All" && row.dataset.status !== filter;
+      });
+    }
+
+    document.querySelectorAll(".filter-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+        document.querySelectorAll(".filter-button").forEach((item) => {
+          item.setAttribute("aria-pressed", String(item === button));
+        });
+        applyFilter(filter);
+      });
+    });
+
+    document.querySelector(".save-button").addEventListener("click", () => {
+      const savedStatuses = Object.fromEntries(requestRows.map((row) => [
+        row.dataset.id,
+        row.querySelector(".update-select").value
+      ]));
+      try {
+        localStorage.setItem(storageKey, JSON.stringify(savedStatuses));
+      } catch (error) {
+        console.error("Could not save appointment statuses.", error);
+        showNotice("Could not save statuses on this device.");
+        return;
+      }
+      requestRows.forEach((row) => {
+        const status = savedStatuses[row.dataset.id];
+        row.dataset.status = status;
+        const badge = row.querySelector(".status-badge");
+        badge.textContent = status;
+        badge.className = `status-badge ${status.toLowerCase()}`;
+      });
+      const activeFilter = document.querySelector('.filter-button[aria-pressed="true"]').dataset.filter;
+      applyFilter(activeFilter);
+      showNotice("Appointment statuses saved.");
+    });
+  </script>
+</body>
+</html>

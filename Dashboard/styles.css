@@ -1,0 +1,517 @@
+    :root {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #080d09;
+      background: #050705;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      --deep-green: #00492d;
+      --line-green: #397c19;
+      --purple: #901bff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      background: #050705;
+    }
+
+    button,
+    select {
+      font: inherit;
+    }
+
+    .canvas {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      min-height: 500px;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 0% 100%, rgb(20 124 48 / 55%), transparent 42%),
+        radial-gradient(ellipse at 100% 100%, rgb(15 116 41 / 52%), transparent 40%),
+        radial-gradient(ellipse at 50% 35%, #123d29 0%, #0b3020 62%, #0a281a 100%);
+    }
+
+    .topbar {
+      position: absolute;
+      top: 3.1%;
+      left: .4%;
+      width: 99.2%;
+      height: clamp(58px, 10.4vh, 76px);
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 0 2.8%;
+      border-top: 3px solid var(--purple);
+      border-bottom: 3px solid var(--purple);
+      color: #fff;
+      background-image:
+        linear-gradient(100deg, rgb(0 111 53 / 26%), rgb(0 92 44 / 30%)),
+        url("assets/header-texture.png");
+      background-position: center;
+      background-size: cover;
+      box-shadow: 0 1px 5px rgb(0 0 0 / 35%);
+    }
+
+    .brand,
+    .account {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      color: #087c3d;
+      background: #fff;
+    }
+
+    .brand-mark svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    .brand-name {
+      overflow: hidden;
+      font-size: clamp(13px, 1.65vw, 17px);
+      font-weight: 700;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .account {
+      color: #fff;
+      font-size: clamp(11px, 1.5vw, 15px);
+      white-space: nowrap;
+    }
+
+    .account-icon {
+      width: 29px;
+      height: 29px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #126b2e;
+      background: #fff;
+    }
+
+    .account-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .design-panel {
+      position: absolute;
+      z-index: 1;
+      top: 19.7%;
+      left: 7.35%;
+      width: 86.5%;
+      height: auto;
+      padding: 2% 3.05% 26px;
+      border-radius: 13px;
+      background: #e8e8e8;
+      box-shadow: 0 5px 18px rgb(0 0 0 / 18%);
+    }
+
+    .intro {
+      position: relative;
+      height: clamp(130px, 14.2vw, 156px);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      border-radius: 13px;
+      color: #fff;
+      background: linear-gradient(112deg, #005333 0%, #00482e 65%, #003f28 100%);
+    }
+
+    .intro-copy {
+      position: relative;
+      z-index: 1;
+      width: 71%;
+      padding: 15px 24px;
+    }
+
+    .eyebrow {
+      margin: 0 0 4px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 3px;
+      font-size: clamp(19px, 2.4vw, 25px);
+      font-weight: 700;
+      letter-spacing: -.4px;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin: 0;
+      font-size: clamp(11px, 1.5vw, 13px);
+      font-weight: 600;
+    }
+
+    .office-photo {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 29%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 54%;
+    }
+
+    .filters {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 14px;
+      font-size: 11px;
+    }
+
+    .filter-label {
+      margin-right: 3px;
+      font-weight: 700;
+    }
+
+    .filter-button {
+      min-width: 50px;
+      padding: 2px 9px;
+      border: 0;
+      border-radius: 999px;
+      color: #102015;
+      background: #fff;
+      cursor: pointer;
+      font-size: 9px;
+      line-height: 1.25;
+      transition: background-color .15s ease, color .15s ease;
+    }
+
+    .filter-button:hover,
+    .filter-button[aria-pressed="true"] {
+      color: #fff;
+      background: #148244;
+    }
+
+    .table-frame {
+      margin-top: 18px;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border: 2px solid var(--line-green);
+      border-collapse: collapse;
+      table-layout: fixed;
+      text-align: center;
+    }
+
+    col.id-column { width: 5.5%; }
+    col.resident-column { width: 21.3%; }
+    col.service-column { width: 19.3%; }
+    col.pickup-column { width: 14.7%; }
+    col.pickup-by-column { width: 14.7%; }
+    col.status-column { width: 11.7%; }
+    col.update-column { width: 12.8%; }
+
+    th,
+    td {
+      border: 2px solid var(--line-green);
+    }
+
+    th {
+      height: 44px;
+      padding: 5px 4px;
+      color: #fff;
+      background: #004a2e;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    td {
+      height: 60px;
+      padding: 5px 8px;
+      background: #e8e8e8;
+      font-size: 10px;
+    }
+
+    .id-cell {
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .resident-name,
+    .service-name {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      white-space: normal;
+    }
+
+    .resident-contact {
+      display: block;
+      margin-top: 2px;
+      font-size: 9px;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+
+    .pickup-time {
+      font-size: 9px;
+      white-space: nowrap;
+    }
+
+    .status-badge {
+      display: inline-block;
+      min-width: 67px;
+      padding: 6px 8px;
+      border-radius: 6px;
+      color: #fff;
+      background: #005333;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .status-badge.pending {
+      color: #463609;
+      background: #f0d56f;
+    }
+
+    .status-badge.declined,
+    .status-badge.cancelled {
+      background: #9a3e35;
+    }
+
+    .update-select {
+      width: 100%;
+      min-width: 72px;
+      height: 27px;
+      padding: 0 6px;
+      border: 0;
+      border-radius: 6px;
+      outline-color: #438d54;
+      color: #101510;
+      background: #fff;
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .save-line {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 2.7%;
+    }
+
+    .save-button {
+      min-width: 58px;
+      height: 19px;
+      margin-top: 1px;
+      padding: 0 11px;
+      border: 0;
+      border-radius: 0 0 6px 6px;
+      color: #fff;
+      background: #005333;
+      cursor: pointer;
+      font-size: 9px;
+      font-weight: 700;
+      line-height: 19px;
+      transition: background-color .15s ease;
+    }
+
+    .save-button:hover {
+      background: #087342;
+    }
+
+    .save-button:focus-visible,
+    .filter-button:focus-visible {
+      outline: 2px solid #981dff;
+      outline-offset: 2px;
+    }
+
+    .dots {
+      position: absolute;
+      z-index: 0;
+      bottom: 3.5%;
+      width: 118px;
+      height: 84px;
+      background-image: radial-gradient(circle, #fff 3.5px, transparent 4.5px);
+      background-size: 25px 25px;
+      background-position: 0 0;
+    }
+
+    .dots-left {
+      left: 3.4%;
+    }
+
+    .dots-right {
+      right: 3.4%;
+    }
+
+    .notice {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 2;
+      padding: 10px 14px;
+      border: 1px solid #bfdec6;
+      border-radius: 6px;
+      color: #12492b;
+      background: #f4fff5;
+      font-size: 12px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(6px);
+      transition: opacity .16s ease, transform .16s ease;
+    }
+
+    .notice.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      clip-path: inset(50%);
+    }
+
+    @media (max-width: 700px) {
+      body {
+        display: block;
+      }
+
+      .canvas {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        padding: 17px 0 120px;
+      }
+
+      .topbar {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        height: 58px;
+        min-height: 58px;
+        padding: 0 12px;
+      }
+
+      .brand,
+      .account {
+        gap: 7px;
+      }
+
+      .brand-mark,
+      .account-icon {
+        width: 27px;
+        height: 27px;
+      }
+
+      .brand-name {
+        font-size: 12px;
+      }
+
+      .account {
+        font-size: 10px;
+      }
+
+      .design-panel {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: calc(100% - 32px);
+        height: auto;
+        margin: 24px auto 0;
+        padding: 12px;
+        border-radius: 11px;
+      }
+
+      .intro {
+        min-height: 160px;
+        height: auto;
+        align-items: flex-start;
+      }
+
+      .intro-copy {
+        width: 100%;
+        padding: 16px;
+      }
+
+      .office-photo {
+        top: auto;
+        right: 0;
+        bottom: 0;
+        width: 34%;
+        height: 45%;
+        opacity: .8;
+      }
+
+      .filters {
+        position: relative;
+        z-index: 1;
+        flex-wrap: wrap;
+        max-width: 64%;
+        gap: 6px 4px;
+        margin-top: 12px;
+      }
+
+      .filter-button {
+        min-width: auto;
+        padding: 3px 8px;
+      }
+
+      .table-frame {
+        margin-top: 12px;
+      }
+
+      table {
+        min-width: 700px;
+      }
+
+      .dots {
+        bottom: 17px;
+        width: 92px;
+        height: 70px;
+        background-size: 22px 22px;
+      }
+
+      .dots-left {
+        left: 16px;
+      }
+
+      .dots-right {
+        right: 16px;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .account span:last-child {
+        max-width: 110px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .subtitle {
+        max-width: 65%;
+        line-height: 1.35;
+      }
+    }
